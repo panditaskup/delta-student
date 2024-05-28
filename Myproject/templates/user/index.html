@@ -1,0 +1,487 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="row slider">
+    <div class="col-sm-9 px-4 py-4">
+        <!--start slider-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/84.jpg' %}" style="min-height:500px;" class="d-block w-100 rounded rounded-3" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h4>AN ADVANCED TRAINING INSTITUTE IN JAUNPUR</h4>
+        <h5>We specialize in job-oriented training and focuses on preparing candidates as per industry needs. We are offering 20+ training courses with 100% placement records.</h5>
+      </div>
+    </div>
+      {% for i in sdata %}
+     <div class="carousel-item">
+      <img src="/{{i.slider_picture}}" style="min-height:500px;" class="d-block w-100 rounded rounded-3" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h4>{{i.headlines}}</h4>
+        <p>{{i.slider_dec}}</p>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        <!--end slider-->
+    </div>
+    <div class="col-sm-3">
+        <div class="fs-4 text-center txt-mycolor"> New <b>Batches</b>
+        <marquee direction="up" height="450px" onmouseover="stop()" behavior="" onmouseleave="start()">
+            <!-- start card -->
+            {% for i in nbdata %}
+            <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+    <img src="/{{i.batch_pic}}" class="img-fluid rounded-start" alt="...">
+
+    </div>
+    <div class="col-md-8 ">
+      <div class="card-body ">
+        <p class="card-text" style="font-size:15px">
+                  {{i.name}}</big><br/>
+                  <i class="fa-solid fa-calendar-days"></i>
+                  {{i.starting_date}}
+              </p>
+      </div>
+    </div>
+  </div>
+</div>
+            <!-- End card -->
+      {% endfor %}
+        </marquee>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <!--start card-->
+        <div class="card text-bg-dark mx-4">
+  <img src="{% static 'images/a.jpg' %}" style="min-height:350px;" class="card-img" alt="...">
+  <div class="card-img-overlay">
+  </div>
+</div>
+        <!--end card-->
+    </div>
+    <div class="col-sm-6 bg-light">
+        <h1> <b>WHO ARE WE?</b></h1>
+        Education is a professional institute for providing industrial training in Jaunpur and Lucknow. We were established in 2009, till now; we have trained 3000+ professionals & completed 300+ batches with five stars rating from our bright students.<br/>
+
+Our advanced training institute attracts participants across the globe due to our highly developed, innovative, and result-oriented approaches. If you are interested in upgrading yourself in the technology sector, Education Learning is the right choice. We cover everything from plan to implementation. We will offer you the personalize time and answer all of your questions one by one.
+    </div>
+</div>
+<div class="row py-5">
+<div class="col-sm-12 mx-4 py-5 bg-light">
+    <div class="row">
+        <div class="col-md-7">
+            <h1><b>WHY CHOOSE US?</b></h1>
+    We have credible, experienced instructors that cover foundations to pro tips and tricks. We are here to<br/>
+            offer you the focused, action-oriented training to grow your niche<br/>
+            <br/>
+    <div class="row mt-5">
+         <div class="col-md-5">
+        <p>
+           <i class="fa-solid fa-chalkboard-user"></i> 10+ years of Experience in Education
+
+        </p>
+        <p>
+           <i class="fa-solid fa-chalkboard-user"></i>  Dedicated Centralized Placement Division
+
+        </p>
+             <p>
+                <i class="fa-solid fa-chalkboard-user"></i>   20+ Class Rooms
+             </p>
+             <p>
+                <i class="fa-solid fa-chalkboard-user"></i>   One Of The Largest Training Center in UP
+             </p>
+
+    </div>
+        <div class="col-md-7">
+            <p>
+                <i class="fa-solid fa-chalkboard-user"></i>   Focused on Job Oriented Courses & Skill Development
+             </p>
+            <p>
+                <i class="fa-solid fa-chalkboard-user"></i>   300+ Associated Corporate Trainers
+             </p>
+            <p>
+                <i class="fa-solid fa-chalkboard-user"></i>  350+ Training Courses
+             </p>
+            <p>
+                <i class="fa-solid fa-chalkboard-user"></i>   Affordable digital marketing course fees
+             </p>
+        </div>
+    </div>
+
+        </div>
+        <div class="col-sm-5">
+        <!--start card-->
+        <div class="card text-bg-dark mt-5">
+  <img src="{% static 'images/46.jpg' %}" style="min-height:350px;" class="card-img" alt="...">
+  <div class="card-img-overlay">
+  </div>
+</div>
+        <!--end card-->
+    </div>
+    </div>
+
+    </div>
+    </div>
+<section class="testimonials section-gap">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h2><b>OUR SUCCESS STORIES</b></h2>
+                <p class="w-75 mx-auto">
+                    We are creative, and we deliver excellent training services for the bright future of our students.
+                    <br/>
+                    Let's check their excellent experience with us.
+                </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+    <div class="col-sm-12 mx-auto">
+        <div class="row py-3 my-3" style="background:#deedec;">
+            <!--card -->
+            {% for a in ddata %}
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="/{{a.student_picture}}" style="height:250px" class="card-img-top"/>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>{{a.student_name}}</b><br/>
+                            <small>{{a.batch}} || {{a.session}}</small><br/>
+                            {{a.company_name}}<br/><img src="/{{a.company_logo}}" class="img-thumbnail" style="max-height:50px max-width:40px"/>
+                            <br/>
+                            {{a.college}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- end card -->
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    </div>
+</section>
+<div class="row text-center mt-5" style="background:#deedec;">
+            <div class="col-md-12 mt-5 mb-5">
+                <h2><b>OUR TRAINING BENEFITS</b></h2>
+                <p class="w-75 mx-auto">
+                    We are addressing the challenges of Web Development, Software Development, Mobile App Development, and Digital Marketing for
+                    <br/>
+                    the future.
+                </p>
+                <div class="row mt-5">
+                <div class="col-md-5">
+        <!--start card-->
+        <div class="card text-bg-dark mx-4 my-4">
+  <img src="{% static 'images/b.jpg' %}" style="min-height:370px;" class="card-img" alt="...">
+  <div class="card-img-overlay">
+  </div>
+</div>
+        <!--end card-->
+    </div>
+
+
+                  <div class="col-md-4 mt-4">
+                      <p class="bg-light fs-5 p-3"><b>100% PLACEMENT ASSISTANCE</b></p>
+                      <br/>
+                      <p class="bg-light fs-5 p-3"><b>BIGGEST LAB FACILITY</b></p>
+                      <br/>
+                      <p class="bg-light fs-5 p-3"><b>PRACTICAL GUIDANCE</b></p>
+                      <br/>
+                      <p class="bg-light fs-5 p-3"><b>LIVE PROJECTS</b></p>
+                  </div>
+                    <div class="col-md-3 mt-4">
+                         <p class="bg-light fs-5 p-3"><b>SMALL BATCH SIZE</b></p>
+                        <br/>
+                         <p class="bg-light fs-5 p-3"><b>HANDS-ON</b></p>
+                        <br/>
+                         <p class="bg-light fs-5 p-3"><b>FLEXIBLE TIMINGS</b></p>
+                        <br/>
+                         <p class="bg-light fs-5 p-3"><b>ONLINE CLASSES</b></p>
+                    </div>
+            </div>
+        </div>
+</div>
+    <div class="container-fluid">
+        <div class="row text-center mt-5 mb-5">
+            <div class="col-md-12 mt-4">
+                <h2><b>WHAT MAKES US DIFFERENT?</b></h2>
+                <p class="w-75 mx-auto">
+                    We offer Industrial Training in all Engineering branches and also for Polytechnic Diploma students.
+                </p>
+             </div>
+        </div>
+        <div class="row mt-5">
+                 <div class="col-md-6">
+                 <p>
+                 <i class="fa-solid fa-chalkboard-user fs-4"></i>
+                      <b> COMPREHENSIVE WORKSHOP</b>
+                     <br/>
+                    <p class="mx-auto"> Get the latest information, clear your doubts, related to the newest
+                     <br/>
+                     technology in once place.</p>
+                 </p>
+                  <p>
+                 <i class="fa-solid fa-chalkboard-user fs-4 mt-5"></i>
+                      <b> ENGAGING EXPERIENCE</b>
+                     <br/>
+                    <p class="mx-auto"> Engaging exercises prepare you to implement what you’re learning.</p>
+                 </p>
+                     <p>
+                 <i class="fa-solid fa-chalkboard-user fs-4 mt-5"></i>
+                      <b> DIRECT INTERACTION</b>
+                     <br/>
+                    <p class="mx-auto">Direct interaction with Developers/Industry Experts to clear your doubts
+                     <br/>
+                     perfectly
+                     </p>
+                 </p>
+             </div>
+            <div class="col-md-6">
+                <p>
+                 <i class="fa-solid fa-chalkboard-user fs-4"></i>
+                      <b> SMALL AND INTIMATE SETTING</b>
+                     <br/>
+                    <p class="mx-auto"> We provide a personalized setting to your queries with justified solutions
+                     <br/>
+                     and answers.</p>
+                <p>
+                 <i class="fa-solid fa-chalkboard-user fs-4 mt-5"></i>
+                      <b> PROVEN STRATEGIES</b>
+                     <br/>
+                    <p class="mx-auto"> We have the latest tools, tips, and tricks that help you to get the updated
+                     <br/>
+                     information.</p>
+                <p>
+                 <i class="fa-solid fa-chalkboard-user fs-4 mt-5"></i>
+                      <b> CERTIFIED INSTITUTE</b>
+                     <br/>
+                    <p class="mx-auto"> We are ISO 9001:2008 Certified Company. Get your Industrial Training
+                     <br/>
+                     from National Icon Award Winner Company.</p>
+            </div>
+            </div>
+    </div>
+<div class="container-fluid" style="background:#deedec;">
+<div class="row mt-5 text-center">
+    <div class="col-md-12 mt-5">
+        <h2><b>OUR COURSES</b></h2>
+        <p class="w-75 mx-auto">
+                    We offer 3/6 months of industrial training based on Live Projects. We offer various industrial training courses under three months and six months of training
+                </p>
+    </div>
+</div>
+    <div class="row mt-5 mx-auto">
+        <div class="col-md-3 sm-6">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/dig.jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>DIGITAL MARKETING</b></h5>
+    <p class="card-text">Our digital marketing course helps to learn things that you never know about digital marketing.</p>
+    <a href="/user/digital/" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (4).jpeg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>PHP</b></h5>
+    <p class="card-text">We provide complete practical skills and php tutorials on the latest tools and frameworks like Django..</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/Android.jpeg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>ANDROID</b></h5>
+    <p class="card-text">Our six months Android certification course includes essential to advanced level and our six months..</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (2).jpeg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>IOS</b></h5>
+    <p class="card-text">Our digital marketing course helps to learn things that you never know about digital marketing.</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (1).jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>JAVA</b></h5>
+    <p class="card-text">Our Java training classes are conducted by professionals and subject specialists having...</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (1).jpeg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>PYTHON</b></h5>
+    <p class="card-text">We offer high-quality python training in Mohali according to industry norms. You can learn up..</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (5).jpeg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>NODE.JS</b></h5>
+    <p class="card-text">Learning Node. JS is the best way to enter into the backend web development or enhance your..</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+        <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (4).jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>REACT JS</b></h5>
+    <p class="card-text">ReactJS is a JavaScript library used to build reusable UI components. It encourages the ...</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+         <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2 mb-5" style="width: 18rem;">
+  <img src="{% static 'images/p22 (3).jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>FLUTTER</b></h5>
+    <p class="card-text">Learn this course from top-rated instructors. It is the new Cross-platform Mobile Development..</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+         <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/p22 (2).jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>GRAPHIC DESIGNING</b></h5>
+    <p class="card-text">Get a graphic designing from our reputed training institute, so that student can get the ..</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+         <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/JAA.jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>JAVASCRIPT</b></h5>
+    <p class="card-text">JavaScript (js) is a light-weight object-oriented programming language which is used by...</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+         <div class="col-md-3 sm-6 mt-5">
+            <!--start card-->
+    <div class="card p-2" style="width: 18rem;">
+  <img src="{% static 'images/JQQ.jpg' %}" style="min-height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>JQUERY</b></h5>
+    <p class="card-text">jQuery is a fast, small, and feature-rich JavaScript library.It makes things like HTML  ...</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+    <!--end card-->
+        </div>
+    </div>
+    </div>
+<div class="container-fluid">
+    <div class="row mt-5 text-center">
+        <div class="col-md-12 mt-5">
+        <h2><b>FAQ</b></h2>
+    </div>
+    </div>
+    <div class="row mt-5 mb-5">
+    <div class="col-md-7">
+        <p class="px-5">
+                <i class="fa-solid fa-circle-plus fs-2 "></i>  <b>WHAT WILL BE THE COURSE?</b><br/>
+            <li class="px-5">PHP</li>
+            <li class="px-5">Python</li>
+            <li class="px-5">Java</li>
+            <li class="px-5">Android</li>
+        </p>
+        <p class="px-5">
+                <i class="fa-solid fa-circle-plus fs-2 "></i>  <b>WHO WILL BE OUR TRAINERS?</b><br/>
+            Our professional trainers have certification in their particular field. They also have industrial experiences that help them to deliver high-quality services.
+        </p>
+            <p class="px-5">
+                <i class="fa-solid fa-circle-plus fs-2 "></i>  <b>HOW MANY STUDENTS WILL BE THERE IN A BATCH?</b><br/>
+                The batch size varies according to your course and program in which you have enrolled in. Mainly we try to form a batch of 10-15 students. We have a good Student Trainer Ratio for effective learning.
+        </p>
+        <p class="px-5">
+                <i class="fa-solid fa-circle-plus fs-2 "></i>  <b>WHEN WILL I GET MY CERTIFICATE?</b><br/>
+            All the Certificates and Project letters will be issued within 45 days of successful completion of the training.
+        </p>
+        <p class="px-5">
+                <i class="fa-solid fa-circle-plus fs-2 "></i>  <b>DO YOU OFFER GROUP DISCOUNT?</b><br/>
+            Yes, for groups of students enrolled in the same sessions, the following group discounts apply: A group of 3-4 students receives a 5% discount.
+        </p>
+        <p class="px-5">
+                <i class="fa-solid fa-circle-plus fs-2 "></i>  <b>WHEN WILL I GET MY PROJECT REPORT?</b><br/>
+            This largely depends on the timeline (or predicted timeline for that matter) outlined in your project manager reports.
+        </p>
+            </div>
+        <div class="col-md-5">
+             <!--start card-->
+        <div class="card text-bg-dark mx-4 my-4">
+  <img src="{% static 'images/faq.jpg' %}" style="min-height:400px;" class="card-img" alt="...">
+  <div class="card-img-overlay">
+  </div>
+</div>
+        <!--end card-->
+    </div>
+        </div>
+        </div>
+</div>
+{% endblock %}

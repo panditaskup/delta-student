@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="container-fluid" style="background:#deedec;">
+<div class="text-center fs-2">Your Valuable <b class="txt-mycolor">Feedback </b><br/>
+   <p class="fs-5"> We appreciate to your valuable feedback and we are always focused on it.</p>
+</div>
+   <div class="container">
+   <div class="row bg-light sm-12">
+      <div class="col-md-5">
+          <!--start card-->
+        <div class="card bg-dark mx-4 my-4">
+  <img src="{% static 'images/fe.jpg' %}" style="min-height:400px;" class="card-img" alt="...">
+  <div class="card-img-overlay">
+  </div>
+</div>
+        <!--end card-->
+      </div>
+      <div class="col-md-7 p-4 fs-5 mx-auto">
+         <b>Add Your Feedback</b>
+         <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                    {% csrf_token %}
+               <div class="col-sm-6">
+                   <label class="mb-0 mt-3">Your Name :</label>
+                    <input type="text" name="yourname" required placeholder="Name of Student" class="form-control"/>
+                  </div>
+               <div class="col-sm-6">
+                    <label class="mb-0 mt-3">Your Image :</label>
+                    <input type="file" name="fu" class="form-control"/>
+                  </div>
+               <div class="col-sm-12">
+                 <label class="mb-0 mt-3">College :</label>
+                    <input type="text" name="college" required placeholder="Enter your college/institute name.." class="form-control"/>
+               </div>
+                <div class="col-sm-12">
+                   <label class="mb-0 mt-3">Your Feedback :</label>
+                    <textarea class="form-control" rows="4" name="message" placeholder="Your valuable feedback*" required></textarea>
+                    </div>
+                <div class="col-sm-12 mb-0 mt-3">
+                    <input type="submit"  value="SEND FEEDBACK" class="btn btn-primary" style="background:#baf0c;"/>
+                </div>
+
+            </div>
+                </form>
+         </div>
+      </div>
+   </div>
+      </div>
+</div>
+{% endblock %}

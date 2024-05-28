@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education Learning</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    <style>
+         :root
+        {
+        --bgcolor:linear-gradient(60deg,#0d47a1,#1b929f);
+        --txtcolor:#1b929f;
+        }
+        .t1
+        {
+        font-size:16px;
+        }
+        .bg-mycolor
+        {
+        background:var(--bgcolor) !important;
+        }
+        .txt-mycolor
+        {
+        color:var(--txtcolor);
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row menu bg-dark">
+        <div class="col-sm-12 ">
+            <!-- start menu-->
+            <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2" href="#">Education <b class="txt-mycolor">Learning <i class="fa-solid fa-graduation-cap"></i></b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start bg-mycolor" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-light" id="offcanvasDarkNavbarLabel">
+              {% if request.session.user %}
+            <img src="/{{request.session.userpic }}" style="max-height:70px;" class="img-thumbnail"/>
+            {{request.session.username }}
+
+            <p style="font-size:13px;">
+               {{ request.session.user }}
+            </p>
+            {% endif %}
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/student/index/">
+                <i class="fa-solid fa-list"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/student/lectures/">
+                <i class="fa-solid fa-video"></i> Lectures</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/notes/">
+                <i class="fa-solid fa-note-sticky"></i> E Notes</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/tasks/">
+                <i class="fa-solid fa-list-check"></i> Task</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/student/batches/">
+              <i class="fa-solid fa-school"></i> Upcoming Batches</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="/student/liveclasses/">
+                <i class="fa-regular fa-circle-play"></i> Live Classes | Timing</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="/student/uprofile/">
+                <i class="fa-regular fa-user"></i> Update Profile</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="/student/softwarekit/">
+                <i class="fa-solid fa-download"></i> Software Kit</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="/student/logout/">
+                <i class="fa-solid fa-power-off"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+            <!-- end menu-->
+        </div>
+    </div>
+    <div class="row t1 bg-mycolor text-light">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center">Your Welcome In Student Zone</div>
+        <div class="col-sm-4"></div>
+    </div>
+
+<div class="row">
+    <div class="col-sm-12" style="min-height:500px; background:#f6f6f6;">
+{% block studentzone %}
+{% endblock %}
+    </div>
+</div>
+    <div class="row footer1 bg-dark">
+     <div  class="col-sm-4 py-5 ps-5">
+<img src="{% static 'images/first.png'%}"  class="pt-2" height="60px" width="200px"/><br/>
+<img src="{% static 'images/second.png'%}"   class="pt-2" height="60px" width="200px"/><br/>
+        <a href="#">
+<img src="{% static 'images/third.png'%}"    class="pt-2"height="60px" width="200px"/><br/>
+        </a>
+    </div>
+    <div class="col-sm-4 ">
+        <h1><b style="color:white; font-size:30px;"><u >Contact</u> </b>
+            <b style="color:white;font-size:30px;">Address</b></h1>
+        <br/><b class="text-warning"><i class="fa-solid fa-house"></i></b>
+        <b style="color:white;">plot No-44, Behind H.P. Petrol Pump</b><br/>
+        <b style="color:white;">Charbagh Ring Rd ,Sector 9,</b><br/>
+        <b style="color:white;">Charbagh ,Lucknow</b><br/>
+        <b style="color:white;">Uttar Pradesh 226022</b><br/><br/>
+        <b class="text-warning"><i class="fa-solid fa-phone fa-spin"></i> </b>
+         <b style="color:white;">+91-8356922015</b>
+          <b class="text-warning"><i class="fa-solid fa-phone fa-spin"></i> </b>
+         <b style="color:white;">+91-9696130644</b><br/>
+          <b class="text-warning"><i class="fa-regular fa-envelope fa-spin"></i> </b>
+         <b style="color:white;">akupadhyay8356@gmail.com</b>
+    </div>
+    <div class="col-sm-4 py-4">
+<img src="{% static 'images/logo.png'%}"  height="60px" width="200px"/><br/>
+    <b style="color:white;">
+    Education is an organization working in both software <br/>
+    Development and Software Tranning Which aims to<br/>
+    make allits client feel special and help them to<br/> become successful</b><br/><br/>
+        <h1><b style="color:white; font-size:30px;"><u>Stay </u></b>
+            <b style="color:white;font-size:30px;">Connected </b></h1>
+         <b style="color:white; text-decoration:none;">
+             <a href="http://www.facebook.com"><i class="fa-brands fa-facebook-f text-light "></i></a>
+            <a href="http://www.twitter.com" ><i class="fa-brands fa-twitter text-light "></i> </a>
+             <a href="http://www.instagram.com"> <i class="fa-brands fa-instagram text-light"></i></a>
+             <a href="https://wa.me/qr/UP5S45RT6NXVM1"> <i class="fa-brands fa-whatsapp text-light"></i></a>
+             <a href="http://www.youtube.com"> <i class="fa-brands fa-youtube text-light"></i></a>
+         </b>
+    </div>
+</div>
+</div>
+<div class="row footer2 bg-dark mt-1">
+    <div class="col-sm-7 "><b style="color:white;"><i class="fa-solid fa-circle-h"></i></b>
+         <b style="color:white;">2009</b>
+        <b class="text-warning">Education Learning </b><b style="color:white;">2009 | Developed By </b>
+        <b class="text-warning"> Er Ankit Kr Upadhyay</b>
+    </div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-2">
+           <b class="text-warning">Privacy and Policy</b>
+    </div>
+</div>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control
+    {
+    height:50px;
+    margin-bottom:.8%;
+    }
+</style>
+<div class="text-center fs-2">
+    <i class="fa-solid fa-phone-volume fa-spin"></i>
+   <strong > Contact   <b class="txt-mycolor">Us </b></strong></div>
+<div class="row">
+    <div class="col-sm-10 mx-auto bg-light py-2">
+        <div class="row">
+        <div class="col-sm-7">
+           <h4><b>DROP US A MESSAGE</b></h4><br/>
+            <form method="post">
+                {% csrf_token %}
+                Name<input type="text" name="name" placeholder="Enter Your Name..." class="form-control" required/>
+                Email<input type="email" name="email" placeholder="Enter Your Email..." class="form-control" required/>
+                Mobile<input type="number" name="mobile" placeholder="Enter Your Mobile Number..." class="form-control" required/>
+                Message<textarea name="msg" placeholder="Enter your message..." class="form-control" required></textarea>
+                <input type="submit" value="Send Your Message" class="btn bg-mycolor text-light">
+            </form>
+        </div>
+            <div class="col-sm-5"><h4><b>GET IN TOUCH</b></h4><br/>
+                  <h5> <i class="fa-solid fa-location-dot"></i> <b>ADDRESS</b></h5>
+                <p>
+                plot No-44, Behind H.P. Petrol Pump,
+                    Charbagh Ring Rd ,Sector 9,
+                    Charbagh ,Lucknow,
+                    Uttar Pradesh 226022.
+                </p><br/>
+
+                <h5> <i class="fas fa-envelope"></i> <b>EMAIL US</b></h5>
+                <p>
+                    akupadhyay8356@gmail.com
+                </p><br/>
+                <h5><i class="fa-solid fa-phone"></i> <b>PHONE NO</b></h5>
+                <p>+91-8356922015</p>
+
+            </div>
+            </div>
+    </div>
+</div>
+{% endblock %}
