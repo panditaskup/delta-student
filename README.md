@@ -1,2 +1,2 @@
 # delta-student
-This is my first project
+This is my mini project
