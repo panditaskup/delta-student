@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="text-center fs-2 bg-light">Sign <b class="txt-mycolor"> Up </b> <i class="fa-solid fa-user-plus"></i></div>
+<style>
+    .form-control
+    {
+    height:45px;
+    margin-bottom:15px;
+    }
+</style>
+<div class="row bg-light">
+    <div class="col-sm-10 mx-auto py-4">
+        <div class="row bg-white">
+            <div class="col-sm-6 border border-3">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    Name
+                    <input type="text" name="name" required placeholder="Name of Student" class="form-control"/>
+                   Email
+                    <input type="email" name="email" required placeholder="Email" class="form-control"/>
+                    Password
+                    <input type="password" name="passwd" required placeholder="Enter Your Password" class="form-control"/>
+                    Mobile (Whatsapp No )
+                    <input type="number" name="mobile" required placeholder="Mobile No" class="form-control"/>
+                    College
+                    <input type="text" name="college" required placeholder="College Name" class="form-control"/>
+                   Course
+                    <input type="text" name="course" required placeholder="Select Course" class="form-control"/>
+                    Select Year
+                    <select name="pyear" class="form-control">
+                        <option>--Select Pursuing Year--</option>
+                        <option>FIRST Year</option>
+                        <option>SECOND Year</option>
+                        <option>THIRD Year</option>
+                        <option>FOURTH Year</option>
+                    </select>
+                    <select name="batch" class="form-control">
+                        <option>--Select your Batch--</option>
+                        {% for i in bdata %}
+                        <option value="{{i.id}}">{{i.batch_name}}</option>
+                        {% endfor %}
+                    </select>
+                    Profile Picture
+                    <input type="file" name="fu" class="form-control"/>
+                    <input type="submit"  value="REGISTER NOW" class="btn btn-primary form-control" style="background:#baf0c; border:none"/>
+                </form>
+            </div>
+            <div class="col-sm-6 text-center fs-3 txt-mycolor">
+                <b>Training Benefits</b><br/>
+               <p class="text-dark fs-5">Some Training Benefits</p>
+                 <div class="col-sm-12">
+                <p class="bg-light fs-5 p-3"><b>100% PLACEMENT ASSISTANCE</b><br/></p>
+                     <p class="bg-light fs-5 p-3"><b>BIGGEST LAB FACILITY</b></p>
+                      <p class="bg-light fs-5 p-3"><b>PRACTICAL GUIDANCE</b></p>
+                      <p class="bg-light fs-5 p-3"><b>LIVE PROJECTS</b></p>
+                     <p class="bg-light fs-5 p-3"><b>SMALL BATCH SIZE</b></p>
+                         <p class="bg-light fs-5 p-3"><b>HANDS-ON</b></p>
+                         <p class="bg-light fs-5 p-3"><b>FLEXIBLE TIMINGS</b></p>
+                         <p class="bg-light fs-5 p-3"><b>ONLINE CLASSES</b></p>
+            </div>
+            </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
